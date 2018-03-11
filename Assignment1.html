@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Assignment 1</title>
+
+		<link rel="stylesheet" href="style/style.css">
+
+		<script>
+
+			function EnterNumber()
+			{
+				var sumOfEven = 0;
+				var sumOfOdd = 0;
+				var countEven = 0;
+				var countOdd = 0;
+				var averageOfEven=0;
+				var averageOfOdd=0;
+
+				do {
+
+					var userInput = prompt("Enter the number").toLowerCase();//prompt user to enter number untill they enter done
+
+					if (userInput == 0)
+
+					{
+
+						alert("Please read instructions carefully. Zero is not valid entry.");
+					}
+
+					else if (isNaN(userInput) && (userInput != "done"))
+
+					{
+
+						alert("Please read instructions carefully. Enter only integer.");
+					}
+
+					else
+
+					{
+						var number = parseInt(userInput);
+
+						if (number % 2 == 0)
+
+						{
+							sumOfEven = sumOfEven + number;
+							countEven++;
+						}
+
+						else if((number % 2 ==1)||(number % 2 ==-1))
+
+						{
+							sumOfOdd = sumOfOdd + number;
+							countOdd++;
+						}
+
+
+						}
+
+				}
+
+				while (userInput != "done");
+
+				if(sumOfEven==0)
+
+				{
+					averageOfEven==0;
+				}
+
+				else
+
+				{
+				 	averageOfEven = sumOfEven / countEven;
+				}
+
+				if(sumOfOdd ==0)
+
+				{
+					averageOfOdd==0;
+				}
+
+				else
+
+				{
+				 	averageOfOdd = sumOfOdd / countOdd;
+				}
+
+
+				document.getElementById("Sum_Even").innerHTML = sumOfEven;
+
+				document.getElementById("Average_Even").innerHTML = averageOfEven;
+
+				document.getElementById("Sum_Odd").innerHTML =  sumOfOdd;
+
+				document.getElementById("Average_Odd").innerHTML = averageOfOdd;
+
+			}
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<header>
+
+			<h1>Even & Odd </h1>
+
+				<p>
+					This is the application which will allow you to enter as many numbers as
+					you want.Then it will display the sum and average of odd and even numbers seperately.
+				<p>
+
+		</header>
+
+		<main>
+
+			<h2> Instructions</h2>
+
+				<ul>
+
+					<li>Click start to begin the process</li>
+					<li>Type "done" when you want application to display the sum and average</li>
+					<li>Zero is not a valid entry</li>
+					<li> Only numbers are allowed</li>
+
+				</ul>
+
+				<p class="center">
+
+					<input  type="button" value="Start" onclick="EnterNumber()">
+
+				</p>
+
+			<table>
+
+				<thead>
+
+					<tr>
+						<th colspan="2" class="center">Even Numbers</th>
+					</tr>
+
+				</thead>
+
+					<tr>
+						<th class="left">Sum</th>
+						<td class="center" id="Sum_Even"></td>
+					</tr>
+
+				<tr>
+					<th class="left">Average</th>
+					<td class="right" id="Average_Even"></td>
+				</tr>
+
+			</table><br>
+
+			<table>
+
+				<thead>
+
+					<tr>
+						<th colspan="2" class="center">Odd Numbers</th>
+					</tr>
+
+				</thead>
+
+				<tbody>
+
+					<tr>
+						<th>Sum</th>
+						<td class="center" id="Sum_Odd"></td>
+					</tr>
+
+					<tr>
+						<th>Average</th>
+						<td class="right" id="Average_Odd"></td>
+					</tr>
+
+				</tbody>
+
+			</table>
+
+		</main>
+
+	</body>
+	<footer>
+		<p>Prepared By : Archana Lohani</p>
+		<p>Group: 18</p>
+	</footer>
+
+</html>
